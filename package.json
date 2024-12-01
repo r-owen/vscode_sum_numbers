@@ -1,44 +1,40 @@
 {
-  "name": "sumumbers",
+  "name": "sumnumbers",
   "displayName": "SumNumbers",
   "description": "Compute the sum of all numbers found at the beginning of each selected line",
-  "version": "0.0.1",
-  "publisher": "?",
-  "private": true,
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/r-owen/vscode_sum_numbers"
   },
-  "engines": {
-    "vscode": "^1.74.0"
-  },
   "categories": [
     "Other"
   ],
   "activationEvents": [],
-  "main": "./out/extension",
+  "main": "./extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "extension.sumNumbers",
+        "command": "sumnumbers.sumNumbers",
         "title": "Sum Numbers"
       }
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "lint": "eslint",
-    "watch": "tsc -watch -p ./"
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
   },
   "devDependencies": {
-    "@eslint/js": "^9.13.0",
-    "@stylistic/eslint-plugin": "^2.9.0",
-    "@types/node": "^20",
-    "@types/vscode": "^1.73.0",
+    "@types/vscode": "^1.95.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
     "eslint": "^9.13.0",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "^8.16.0"
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
   }
 }

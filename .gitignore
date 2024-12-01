@@ -1,7 +1,3 @@
-.DS_Store
-node_modules/
-out/
-.vscode/
-*.lsif
-*.db
-*.tsbuildinfo
+node_modules
+.vscode-test/
+*.vsix
